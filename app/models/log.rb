@@ -1,3 +1,3 @@
 class Log < ActiveRecord::Base
-  # attr_accessible :title, :body
+  validates :message, :host, :path, :useragent,  presence: true
 end
