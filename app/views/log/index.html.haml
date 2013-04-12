@@ -1,0 +1,26 @@
+%h2 LOGS
+
+%table
+  %thead
+    %th host
+    %th path
+    %th useragent
+    %th token
+    %th requested ip
+    %th message
+
+  %tbody
+    - @logs.each do |l|
+      %tr
+        %td
+          = l.host
+        %td
+          = l.path
+        %td
+          = l.useragent
+        %td
+          = link_to l.token, log_token_search_path(l.token)
+        %td
+          = l.requested_ip
+        %td
+          = l.message
