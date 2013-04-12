@@ -2,10 +2,9 @@ module Api
   module V1
     class LogController < ApplicationController
       def create
+        puts "IP: #{request.remote_ip}"
         log = Log.new(params[:log])
-
-        puts "VALID: #{log.valid?}"
-        puts "Messages: #{log.errors.messages}"
+        log.requested_ip = request.remote_ip
 
         if log.save
           render json: { success: true }
