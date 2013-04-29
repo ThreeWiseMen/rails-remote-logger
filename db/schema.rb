@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411151109) do
+ActiveRecord::Schema.define(:version => 20130429185823) do
 
   create_table "logs", :force => true do |t|
     t.string   "useragent"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130411151109) do
     t.string   "path"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "username"
   end
 
 end
