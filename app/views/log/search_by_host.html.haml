@@ -1,0 +1,28 @@
+%h2
+  Logs -
+  = @logs.first.host
+
+%table
+  %thead
+    %th host
+    %th path
+    %th useragent
+    %th token
+    %th requested ip
+    %th message
+
+  %tbody
+    - @logs.each do |l|
+      %tr
+        %td
+          = l.host
+        %td
+          = l.path
+        %td
+          = l.useragent
+        %td
+          = l.token
+        %td
+          = l.requested_ip
+        %td
+          = l.message
